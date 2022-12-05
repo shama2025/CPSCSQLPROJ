@@ -9,6 +9,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+/*
+Stored procedure code
+
+USE [CPSCBOOK]
+GO
+/****** Object:  StoredProcedure [dbo].[FormThree]    Script Date: 12/4/2022 8:02:23 PM *****
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[FormThree] (@COM nvarchar(4000), @Com_Title int, @COM_Time datetime)
+
+AS
+BEGIN
+BEGIN TRY
+
+
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	INSERT INTO COMMENT (COMMENT, Title_ID,Comment_Timestamp) VALUES(@COM,@Com_Title,@COM_Time)
+
+	Select * from COMMENT
+
+END TRY
+BEGIN CATCH
+print 'catch err!'
+END CATCH
+END
+*/
+
 
 namespace SQLFRONTEND
 {
